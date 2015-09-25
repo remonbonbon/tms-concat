@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #eee;
+}
+.toolbar {
+  position: absolute;
+  height: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 4px;
+}
+.toolbar__form {
+  width: 5.5em;
+}
+.toolbar__checkbox {
+  margin-right: 1em;
+}
+.toolbar__checkbox input[type="checkbox"] {
+  margin-left: 0;
+  margin-right: 0;
+}
+.toolbar__download {
+  float: right;
+}
+.map {
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

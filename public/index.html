@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TMS concat</title>
+    <link rel="stylesheet" href="/vendor/openlayers-v3.9.0/ol.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <nav class="toolbar">
+      <select id="mapSelector"></select>
+      <span>Min: </span>
+      <input type="text" id="minLng" class="toolbar__form">
+      <input type="text" id="minLat" class="toolbar__form">
+      <span>Max: </span>
+      <input type="text" id="maxLng" class="toolbar__form">
+      <input type="text" id="maxLat" class="toolbar__form">
+      <span>Zoom: </span>
+      <input type="number" id="zoom" class="toolbar__form" min="0" max="18">
+      <label class="toolbar__checkbox">
+        <input type="checkbox" id="zoomLock"> lock
+      </label>
+      <span>Tiles: </span>
+      <span id="totalTiles"></span>
+      <button id="download" class="toolbar__download">Download</button>
+    </nav>
+    <article id="map" class="map"></article>
+    <script src="/vendor/jquery-2.1.4.min.js"></script>
+    <script src="/vendor/lodash-3.10.1.min.js"></script>
+    <script src="/vendor/openlayers-v3.9.0/ol.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
