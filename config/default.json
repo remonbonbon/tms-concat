@@ -2,6 +2,7 @@
   "port": 2828,
   "host": "0.0.0.0",
   "mapDirectory": "./tmp",
+  "resultUrlBase": "/result",
   "downloadParallelLimit": 4,
   "maps": [
     {

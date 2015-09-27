@@ -12,6 +12,8 @@ var async = require('async');
 var fs = require('fs');
 var http = require('http');
 var mkdirp = require('mkdirp');
+var uuid = require('uuid');
+var exec = require('child_process').exec;
 var app = express();
 
 app.use(compression());
@@ -83,7 +85,38 @@ app.post('/api/concat', function(req, res) {
     }
     else {
       logger.info('Download complete');
-      return res.json({});
+      var yMin = -req.body.y.min;
+      var yMax = -req.body.y.max;
+      if (yMax < yMin) {
+        yMin = -req.body.y.max;
+        yMax = -req.body.y.min;
+      }
+      var resultFilename = uuid.v4() + '.png';
+      var resultUrl = path.join(config.resultUrlBase, resultFilename);
+      var resultPath = path.resolve(path.join('./public', resultUrl));
+      var cmd = [
+        'python',
+        'concat-tile-images.py',
+        path.resolve(config.mapDirectory, map.directory),
+        z,
+        req.body.x.min, req.body.x.max,
+        yMin, yMax,
+        resultPath
+      ].join(' ');
+      logger.debug('Concating...');
+      exec(cmd, function(err, stdout, stderr) {
+        if (err) {
+          logger.warn(err);
+          return res.json({
+            error: {message: 'Download failed'}
+          });
+        }
+        logger.info('Concat complete');
+        logger.debug(resultUrl);
+        return res.json({
+          path: resultUrl
+        });
+      });
     }
   });
 });
