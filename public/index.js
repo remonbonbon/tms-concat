@@ -48,6 +48,14 @@
     })
   });
 
+  // ---------------- Tile border layer ----------------
+  var tileBorderLayer = new ol.layer.Tile({
+    source: new ol.source.XYZ({
+      url: '/tile-border.png',
+      wrapX: false
+    }),
+  });
+
   // ---------------- Selector box ----------------
   var drawingLayer = new ol.layer.Vector({
     source: new ol.source.Vector({wrapX: false}),
@@ -105,6 +113,7 @@
   function changeBaseMap(index) {
     map.getLayers().clear();
     map.addLayer(maps[index].layer);
+    map.addLayer(tileBorderLayer);
     map.addLayer(drawingLayer);
   }
 
