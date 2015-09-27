@@ -21,6 +21,13 @@
     _.each(maps, function(m, index) {
       var $option = $('<option>').attr('value', index).text(m.name);
       $mapSelector.append($option);
+
+      m.layer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+          urls: m.urls,
+          wrapX: false
+        })
+      });
     });
     changeBaseMap(0);
   });
@@ -95,14 +102,8 @@
 
   // Change base map
   function changeBaseMap(index) {
-    var baseMap = new ol.layer.Tile({
-      source: new ol.source.XYZ({
-        urls: maps[index].urls,
-        wrapX: false
-      })
-    });
     map.getLayers().clear();
-    map.addLayer(baseMap);
+    map.addLayer(maps[index].layer);
     map.addLayer(drawingLayer);
   }
 
@@ -147,6 +148,7 @@
     var extent = getSelectedTileExtent();
     if (!extent) return;
     var req = {
+      map: maps[$mapSelector.val()].name,
       z: extent.min[0],
       x: {
         min: extent.min[1],
