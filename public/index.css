@@ -37,6 +37,9 @@ body {
   background-color: rgba(255,255,255, 0.5);
   box-shadow: 3px 3px 5px 0 #333;
   border: 1px solid #fff;
+  display: block;
+}
+.downloadList:empty {
   display: none;
 }
 .downloadList__link {

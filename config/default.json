@@ -4,24 +4,75 @@
   "mapDirectory":    "./tmp/tiles",
   "resultDirectory": "./tmp/results",
   "resultUrlBase": "/results",
-  "downloadParallelLimit": 4,
+  "downloadParallelLimit": 8,
   "maps": [
     {
       "key": "osm-basic",
-      "name": "OSM basic map",
+      "name": "OSM Basic",
       "urls": [
         "http://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
         "http://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
         "http://c.tile.openstreetmap.org/{z}/{x}/{y}.png"
       ]
     }, {
+      "key": "osm-humanitarian",
+      "name": "OSM Humanitarian",
+      "urls": [
+        "http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+        "http://b.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+        "http://c.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+      ]
+    }, {
       "key": "mapquest-osm",
       "name": "Mapquest OSM",
       "urls": [
-        "http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
-        "http://otile2.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
-        "http://otile3.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
-        "http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png"
+        "http://ttiles01.mqcdn.com/tiles/1.0.0/vy/map/{z}/{x}/{y}.png",
+        "http://ttiles02.mqcdn.com/tiles/1.0.0/vy/map/{z}/{x}/{y}.png",
+        "http://ttiles03.mqcdn.com/tiles/1.0.0/vy/map/{z}/{x}/{y}.png",
+        "http://ttiles04.mqcdn.com/tiles/1.0.0/vy/map/{z}/{x}/{y}.png"
+      ]
+    }, {
+      "key": "mapquest-sat",
+      "name": "Mapquest Satelight",
+      "urls": [
+        "http://ttiles01.mqcdn.com/tiles/1.0.0/vy/sat/{z}/{x}/{y}.png",
+        "http://ttiles02.mqcdn.com/tiles/1.0.0/vy/sat/{z}/{x}/{y}.png",
+        "http://ttiles03.mqcdn.com/tiles/1.0.0/vy/sat/{z}/{x}/{y}.png",
+        "http://ttiles04.mqcdn.com/tiles/1.0.0/vy/sat/{z}/{x}/{y}.png"
+      ]
+    }, {
+      "key": "stamen-toner",
+      "name": "Stamen Toner",
+      "urls": [
+        "http://a.tile.stamen.com/toner/{z}/{x}/{y}.png",
+        "http://b.tile.stamen.com/toner/{z}/{x}/{y}.png",
+        "http://c.tile.stamen.com/toner/{z}/{x}/{y}.png",
+        "http://d.tile.stamen.com/toner/{z}/{x}/{y}.png"
+      ]
+    }, {
+      "key": "stamen-watercolor",
+      "name": "Stamen Watercolor",
+      "urls": [
+        "http://a.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
+        "http://b.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
+        "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
+        "http://d.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg"
+      ]
+    }, {
+      "key": "thunderforest-landscape",
+      "name": "Thunderforest Landscape",
+      "urls": [
+        "http://a.tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
+        "http://b.tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
+        "http://c.tile.thunderforest.com/landscape/{z}/{x}/{y}.png"
+      ]
+    }, {
+      "key": "thunderforest-transport",
+      "name": "Thunderforest Transport",
+      "urls": [
+        "http://a.tile.thunderforest.com/transport/{z}/{x}/{y}.png",
+        "http://b.tile.thunderforest.com/transport/{z}/{x}/{y}.png",
+        "http://c.tile.thunderforest.com/transport/{z}/{x}/{y}.png"
       ]
     }
   ]

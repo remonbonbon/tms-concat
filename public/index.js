@@ -165,8 +165,9 @@
         max: extent.max[1]
       },
       y: {
-        min: -extent.max[2] - 1,
-        max: -extent.min[2] - 1
+        // Flip y-coord
+        min: -(extent.max[2] + 1),
+        max: -(extent.min[2] + 1)
       }
     };
     $.ajax({
@@ -179,7 +180,6 @@
         .attr('href', json.path)
         .text(json.filename);
       $downloadList.prepend($downloadLink);
-      $downloadList.css('display', 'block');
     });
   });
 })();

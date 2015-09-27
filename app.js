@@ -82,9 +82,12 @@ app.post('/api/concat', function(req, res) {
             mkdirp(path.dirname(img.path), function(mkdirErr) {
               if (mkdirErr) return next(mkdirErr);
               var request = http.get(img.url, function(response) {
-                response.pipe(fs.createWriteStream(img.path));
-                logger.debug('Download:', img.url);
-                next(null);
+                var file = fs.createWriteStream(img.path);
+                response.pipe(file);
+                file.on('finish', function() {
+                  logger.debug('Download:', img.url);
+                  next(null);
+                });
               }).on('error', function(getErr) {
                 next(getErr);
               });
