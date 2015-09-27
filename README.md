@@ -5,7 +5,7 @@ Concat TMS tile images to create a high-resolusion image.
 
 Installation
 -------------
-1. Install [pillow](http://pillow.readthedocs.org/en/latest/installation.html)
+1. Install Python 2.7.x and [pillow](http://pillow.readthedocs.org/en/latest/installation.html)
 2. Install Node.js ([nvm](https://github.com/creationix/nvm))
 
 ~~~
