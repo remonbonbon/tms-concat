@@ -23,20 +23,15 @@ app.use(bodyParser.json());
 
 app.get('/api/maps', function(req, res) {
   return res.json({
-    maps: _.map(config.maps, function(m) {
-      return {
-        name: m.name,
-        urls: m.urls
-      };
-    })
+    maps: config.maps
   });
 });
 app.post('/api/concat', function(req, res) {
   logger.debug(req.body);
-  var map = _.find(config.maps, {name: req.body.map});
+  var map = _.find(config.maps, {key: req.body.map});
   if (!map) {
     return res.json({
-      error: {message: 'Invalid map name'}
+      error: {message: 'Invalid map'}
     });
   }
   var z = req.body.z;
@@ -45,7 +40,7 @@ app.post('/api/concat', function(req, res) {
   var yMin = req.body.y.min;
   var yMax = req.body.y.max;
   var resultFilename = [
-    map.directory,
+    map.key,
     z,
     xMin, xMax,
     yMin, yMax,
@@ -64,7 +59,7 @@ app.post('/api/concat', function(req, res) {
             tileImages.push({
               path: path.resolve(
                 config.mapDirectory,
-                map.directory,
+                map.key,
                 z.toString(),
                 x.toString(),
                 y + '.png'),
@@ -109,7 +104,7 @@ app.post('/api/concat', function(req, res) {
         var cmd = [
           'python',
           'concat-tile-images.py',
-          path.resolve(config.mapDirectory, map.directory),
+          path.resolve(config.mapDirectory, map.key),
           z,
           xMin, xMax,
           yMin, yMax,
@@ -132,7 +127,8 @@ app.post('/api/concat', function(req, res) {
       logger.info('Concat complete');
       logger.debug(resultUrl);
       return res.json({
-        path: resultUrl
+        path: resultUrl,
+        filename: resultFilename
       });
     });
   });

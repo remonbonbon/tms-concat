@@ -42,8 +42,7 @@ body {
 .downloadList__link {
   margin: 4px;
   display: block;
-  width: 10em;
-  text-overflow: ellipsis;
+  text-decoration: none;
 }
 .map {
   position: absolute;

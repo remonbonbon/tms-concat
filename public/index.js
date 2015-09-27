@@ -149,7 +149,7 @@
     var extent = getSelectedTileExtent();
     if (!extent) return;
     var req = {
-      map: maps[$mapSelector.val()].name,
+      map: maps[$mapSelector.val()].key,
       z: extent.min[0],
       x: {
         min: extent.min[1],
@@ -168,7 +168,7 @@
     }).done(function(json) {
       var $downloadLink = $('<a class="downloadList__link" target="_blank">')
         .attr('href', json.path)
-        .text(json.path);
+        .text(json.filename);
       $downloadList.prepend($downloadLink);
       $downloadList.css('display', 'block');
     });

@@ -7,16 +7,16 @@
   "downloadParallelLimit": 4,
   "maps": [
     {
+      "key": "osm-basic",
       "name": "OSM basic map",
-      "directory": "osm-basic",
       "urls": [
         "http://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
         "http://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
         "http://c.tile.openstreetmap.org/{z}/{x}/{y}.png"
       ]
     }, {
+      "key": "mapquest-osm",
       "name": "Mapquest OSM",
-      "directory": "mapquest-osm",
       "urls": [
         "http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
         "http://otile2.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
