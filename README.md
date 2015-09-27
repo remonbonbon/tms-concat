@@ -1,6 +1,6 @@
 tms-concat
 ===============
-Concat TMS tile images to create a high-resolusion image.
+Concat TMS ([Tile Map Service](https://en.wikipedia.org/wiki/Tile_Map_Service)) tile-images to create a high-resolusion image.
 
 
 Installation
