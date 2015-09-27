@@ -10,6 +10,7 @@
   var $zoomLock = $('#zoomLock');
   var $totalTiles = $('#totalTiles');
   var $download = $('#download');
+  var $downloadList = $('#downloadList');
 
   // ---------------- Fetch available maps ----------------
   // Configuration of available maps
@@ -155,8 +156,8 @@
         max: extent.max[1]
       },
       y: {
-        min: extent.min[2],
-        max: extent.max[2]
+        min: -extent.max[2] - 1,
+        max: -extent.min[2] - 1
       }
     };
     $.ajax({
@@ -165,7 +166,11 @@
       data: JSON.stringify(req),
       contentType : 'application/json',
     }).done(function(json) {
-      console.log(json);
+      var $downloadLink = $('<a class="downloadList__link" target="_blank">')
+        .attr('href', json.path)
+        .text(json.path);
+      $downloadList.prepend($downloadLink);
+      $downloadList.css('display', 'block');
     });
   });
 })();

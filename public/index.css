@@ -28,6 +28,23 @@ body {
 .toolbar__download {
   float: right;
 }
+.downloadList {
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  padding: 4px;
+  z-index: 1000;
+  background-color: rgba(255,255,255, 0.5);
+  box-shadow: 3px 3px 5px 0 #333;
+  border: 1px solid #fff;
+  display: none;
+}
+.downloadList__link {
+  margin: 4px;
+  display: block;
+  width: 10em;
+  text-overflow: ellipsis;
+}
 .map {
   position: absolute;
   top: 30px;

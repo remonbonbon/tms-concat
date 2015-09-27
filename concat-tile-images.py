@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from PIL import Image   # pip install pillow
+from PIL import Image   # sudo pip install pillow
 import sys
 import os.path
 
