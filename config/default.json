@@ -9,6 +9,7 @@
     {
       "key": "osm-basic",
       "name": "OSM Basic",
+      "attribution": "(C) OpenStreetMap contributors",
       "urls": [
         "http://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
         "http://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -17,6 +18,7 @@
     }, {
       "key": "osm-humanitarian",
       "name": "OSM Humanitarian",
+      "attribution": "(C) OpenStreetMap contributors",
       "urls": [
         "http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
         "http://b.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
@@ -25,6 +27,7 @@
     }, {
       "key": "mapquest-osm",
       "name": "Mapquest OSM",
+      "attribution": "Data, imagery and map information provided by MapQuest, OpenStreetMap and contributors, ODbL.",
       "urls": [
         "http://ttiles01.mqcdn.com/tiles/1.0.0/vy/map/{z}/{x}/{y}.png",
         "http://ttiles02.mqcdn.com/tiles/1.0.0/vy/map/{z}/{x}/{y}.png",
@@ -34,6 +37,7 @@
     }, {
       "key": "mapquest-sat",
       "name": "Mapquest Satelight",
+      "attribution": "Data, imagery and map information provided by MapQuest, OpenStreetMap and contributors, ODbL.",
       "urls": [
         "http://ttiles01.mqcdn.com/tiles/1.0.0/vy/sat/{z}/{x}/{y}.png",
         "http://ttiles02.mqcdn.com/tiles/1.0.0/vy/sat/{z}/{x}/{y}.png",
@@ -43,6 +47,7 @@
     }, {
       "key": "stamen-toner",
       "name": "Stamen Toner",
+      "attribution": "Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.",
       "urls": [
         "http://a.tile.stamen.com/toner/{z}/{x}/{y}.png",
         "http://b.tile.stamen.com/toner/{z}/{x}/{y}.png",
@@ -52,6 +57,7 @@
     }, {
       "key": "stamen-watercolor",
       "name": "Stamen Watercolor",
+      "attribution": "Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.",
       "urls": [
         "http://a.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
         "http://b.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
@@ -61,6 +67,7 @@
     }, {
       "key": "thunderforest-landscape",
       "name": "Thunderforest Landscape",
+      "attribution": "Maps (C) Thunderforest, Data (C) OpenStreetMap contributors",
       "urls": [
         "http://a.tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
         "http://b.tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
@@ -69,6 +76,7 @@
     }, {
       "key": "thunderforest-transport",
       "name": "Thunderforest Transport",
+      "attribution": "Maps (C) Thunderforest, Data (C) OpenStreetMap contributors",
       "urls": [
         "http://a.tile.thunderforest.com/transport/{z}/{x}/{y}.png",
         "http://b.tile.thunderforest.com/transport/{z}/{x}/{y}.png",

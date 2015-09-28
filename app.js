@@ -111,7 +111,8 @@ app.post('/api/concat', function(req, res) {
           z,
           xMin, xMax,
           yMin, yMax,
-          resultPath
+          resultPath,
+          '"' + map.attribution + '"',
         ].join(' ');
         logger.trace('exec:', cmd);
         exec(cmd, function(err, stdout, stderr) {

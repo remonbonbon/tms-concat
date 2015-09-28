@@ -25,6 +25,11 @@
 
       m.layer = new ol.layer.Tile({
         source: new ol.source.XYZ({
+          attributions: [
+            new ol.Attribution({
+              html: m.attribution
+            })
+          ],
           urls: m.urls,
           wrapX: false
         })
@@ -36,7 +41,9 @@
   // ---------------- map ----------------
   var map = new ol.Map({
     target: 'map',
-    controls: [],
+    controls: ol.control.defaults({
+      attributionOptions: {collapsible: false}
+    }),
     loadTilesWhileAnimating: true,
     loadTilesWhileInteracting: true,
     layers: [],
